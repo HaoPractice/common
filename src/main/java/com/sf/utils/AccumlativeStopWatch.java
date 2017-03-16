@@ -264,7 +264,7 @@ public class AccumlativeStopWatch {
       for (TaskInfo task : taskMap.values()) {
         int count = task.count;
         String str;
-        if (count > 99999) {
+        if (getNumberOfBits(count)>5) {
           str = BLANK2;
         } else {
           str = BLANK3;
@@ -296,8 +296,24 @@ public class AccumlativeStopWatch {
     }
     return sb.toString();
   }
-
-
+  /**
+   * 获取整数的位数
+   */
+  private int getNumberOfBits(int count){
+    int i = 1;
+    while(count / 10 > 0) {
+      count = count / 10;
+      i++;
+    }
+    return i;
+  }
+  public static void main(String[] args) {
+    AccumlativeStopWatch accumlativeStopWatch = new AccumlativeStopWatch();
+    System.out.println(accumlativeStopWatch.getNumberOfBits(1));
+    System.out.println(accumlativeStopWatch.getNumberOfBits(10));
+    System.out.println(accumlativeStopWatch.getNumberOfBits(11));
+    System.out.println(accumlativeStopWatch.getNumberOfBits(999));
+  }
   /**
    * Inner class to hold data about one task executed within the stop watch.
    */
