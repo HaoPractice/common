@@ -6,7 +6,7 @@
 	<artifactId>utils</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>common-utils</name>
-	<description>common lib ,usually used library.</description>
+	<description>included usually used library.include:guava,gson,autovalue,junit,apache-common3,log4j,mysql-driver,fasterxml-jackson,findbugs-annotation,spring-related-package</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,7 +18,7 @@
 	<!-- </properties> -->
 
 	<dependencies>
-		
+
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -37,10 +37,11 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>21.0</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
@@ -79,7 +80,6 @@
 			<artifactId>guava</artifactId>
 			<version>21.0</version>
 		</dependency>
-
 		<!-- jstl -->
 		<dependency>
 			<groupId>javax.servlet.jsp.jstl</groupId>
@@ -92,18 +92,19 @@
 			<!-- <version>1.2</version> -->
 		</dependency>
 
+		<!-- jsr305 -->
 		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.2.0</version>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+			<version>3.0.2</version>
 		</dependency>
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<!-- <version>${mysql.version}</version> -->
 			<scope>runtime</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
